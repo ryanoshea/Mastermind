@@ -3,7 +3,7 @@ package Mastermind;
 /**
  * @author Ryan O'Shea
  *
- * Copyright © 2009 Ryan O'Shea
+ * Copyright © 2009-2011 Ryan O'Shea
  *
  * Copying Permissions: 
  * 	This file is part of Mastermind.

@@ -3,7 +3,7 @@ package Mastermind;
 /**
  * @author Ryan O'Shea
  *
- * Copyright © 2009 Ryan O'Shea
+ * Copyright © 2009-2011 Ryan O'Shea
  *
  * Copying Permissions: 
  * 	This file is part of Mastermind.
@@ -26,7 +26,8 @@ public class Mastermind {
     //LOADER Class
 
     public static void main(String[] args){
-        TerminalPlayer player = new TerminalPlayer();
+        GUIPlayer player = new GUIPlayer();
+        player.setVisible(true);
 
         Game game = new Game(player, Integer.parseInt(args[0]), Integer.parseInt(args[1]), Integer.parseInt(args[2]));
 
