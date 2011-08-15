@@ -1,5 +1,13 @@
 package Mastermind;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  * @author Ryan O'Shea
  *
@@ -22,11 +30,12 @@ package Mastermind;
  *  along with Mastermind (see the "COPYING" file).  If not, see <http://www.gnu.org/licenses/>.
  */
 
-public class GUIPlayer extends javax.swing.JFrame implements Player {
+public class GUIPlayer extends javax.swing.JFrame implements Player, ActionListener {
 
     /** Creates new form GUIPlayer */
     public GUIPlayer() {
         initComponents();
+        this.jButtonSubmitInput.addActionListener(this);
     }
 
     /** This method is called from within the constructor to
@@ -47,6 +56,12 @@ public class GUIPlayer extends javax.swing.JFrame implements Player {
         jSeparator1 = new javax.swing.JSeparator();
         jLabelnDigits = new javax.swing.JLabel();
         jLabelRange = new javax.swing.JLabel();
+        jLabelRemainingGuesses = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabelrecGuesses = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jTextFieldInput = new javax.swing.JTextField();
+        jButtonSubmitInput = new javax.swing.JButton();
 
         javax.swing.GroupLayout jFrame1Layout = new javax.swing.GroupLayout(jFrame1.getContentPane());
         jFrame1.getContentPane().setLayout(jFrame1Layout);
@@ -97,30 +112,73 @@ public class GUIPlayer extends javax.swing.JFrame implements Player {
         jLabelRange.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jLabelRange.setText("Each digit ranges from 1-X");
 
+        jLabelRemainingGuesses.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        jLabelRemainingGuesses.setText("You have X guesses left");
+
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel4.setText("Your Guesses");
+
+        jLabelrecGuesses.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        jLabelrecGuesses.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
+        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel5.setText("Your Guess:");
+
+        jTextFieldInput.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jTextFieldInput.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jTextFieldInput.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        jTextFieldInput.setEnabled(false);
+
+        jButtonSubmitInput.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
+        jButtonSubmitInput.setText("Guess");
+        jButtonSubmitInput.setEnabled(false);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(layout.createSequentialGroup()
+                                            .addGap(10, 10, 10)
+                                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addGap(654, 654, 654)))
+                                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 757, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(319, 319, 319)
+                                .addComponent(jTextFieldInput, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(10, 10, 10))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(654, 654, 654)))
-                .addGap(18, 18, 18)
+                        .addContainerGap(358, Short.MAX_VALUE)
+                        .addComponent(jButtonSubmitInput)
+                        .addGap(356, 356, 356)))
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(layout.createSequentialGroup()
-                            .addGap(10, 10, 10)
-                            .addComponent(jLabelnDigits, javax.swing.GroupLayout.PREFERRED_SIZE, 279, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(jLabelRange, javax.swing.GroupLayout.PREFERRED_SIZE, 279, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addGap(10, 10, 10)
+                                    .addComponent(jLabelnDigits, javax.swing.GroupLayout.PREFERRED_SIZE, 279, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jLabelRange, javax.swing.GroupLayout.PREFERRED_SIZE, 279, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabelRemainingGuesses, javax.swing.GroupLayout.PREFERRED_SIZE, 279, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 279, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(26, 26, 26)
+                        .addComponent(jLabelrecGuesses, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addGap(18, 18, 18))
             .addComponent(jLabelTitle, javax.swing.GroupLayout.DEFAULT_SIZE, 1102, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
@@ -133,13 +191,25 @@ public class GUIPlayer extends javax.swing.JFrame implements Player {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(62, 62, 62)
+                        .addComponent(jLabel5)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jTextFieldInput, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButtonSubmitInput))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jLabelnDigits)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabelRange))
+                        .addComponent(jLabelRange)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabelRemainingGuesses)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabelrecGuesses, javax.swing.GroupLayout.PREFERRED_SIZE, 303, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 617, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -186,18 +256,25 @@ public class GUIPlayer extends javax.swing.JFrame implements Player {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButtonSubmitInput;
     private javax.swing.JFrame jFrame1;
     private javax.swing.JFrame jFrame2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabelRange;
+    private javax.swing.JLabel jLabelRemainingGuesses;
     private javax.swing.JLabel jLabelTitle;
     private javax.swing.JLabel jLabelnDigits;
+    private javax.swing.JLabel jLabelrecGuesses;
     private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JTextField jTextFieldInput;
     // End of variables declaration//GEN-END:variables
 
     GameState gs;
+    String input = new String();
     
     public void acceptGameState(GameState gs) {
         this.gs = gs;
@@ -208,26 +285,60 @@ public class GUIPlayer extends javax.swing.JFrame implements Player {
     public int[] getNextGuess() {
         int[] guess;
         char[] inputCharArray;
-        String input = new String();
         
         dumpGameStateToGUI();
         
-        //code here to prompt user for a guess, store it in input, 
+        //code here to prompt user for a guess, store it in input
+        this.jButtonSubmitInput.setEnabled(true);
+        this.jTextFieldInput.setEnabled(true);
+        
+//        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+//        
+//        try {
+//            input = reader.readLine();
+//        } catch (IOException ex) {
+//            Logger.getLogger(TerminalPlayer.class.getName()).log(Level.SEVERE, null, ex);
+//        }
+        
+        while("".equals(input)) { //creates infinite loop to wait until button is pressed and the jTextFieldInput has something it it
+        }
         
         guess = new int[gs.nDigits];
-        
+
         inputCharArray = new char[gs.nDigits];
         inputCharArray = input.toCharArray();
-        
+        input = "";
+
         for(int i = 0; i< gs.nDigits; i++) {
             guess[i] = Integer.parseInt(String.valueOf(inputCharArray[i]));
         }
-        
+
         return guess;
+        
+    }
+    
+    public void actionPerformed(ActionEvent e) {
+        input = this.jTextFieldInput.getText();
+        this.jTextFieldInput.setText("");
     }
     
     private void dumpGameStateToGUI() {
         this.jLabelnDigits.setText(gs.nDigits + " digits in the number you're trying to guess");
         this.jLabelRange.setText("Each digit ranges from 1-" + gs.range);
+        this.jLabelRemainingGuesses.setText("You have "  + (gs.nGuesses - gs.idxGuess) + " guesses left of " + gs.nGuesses + " total");
+        
+        this.jLabelrecGuesses.setText("<html>");
+        
+        for(int i = 0; i < gs.idxGuess; i++) {
+            
+            for(int k = 0; k < gs.nDigits; k++) {
+                this.jLabelrecGuesses.setText("" + this.jLabelrecGuesses.getText() + gs.recGuesses[i][k]);
+            }
+
+            this.jLabelrecGuesses.setText(this.jLabelrecGuesses.getText() + "    " + gs.recRed[i] + "    " + gs.recWhite[i]);
+            this.jLabelrecGuesses.setText(this.jLabelrecGuesses.getText() + "<br>");
+        }
+        
+        this.jLabelrecGuesses.setText(this.jLabelrecGuesses.getText() + "</html>");
     }
 }
