@@ -42,14 +42,15 @@ public class Game {
 
             nRed = 0;
             nWhite = 0;
-			//Logic for determining red return
+            
+            //Logic for determining red return
             for(int i = 0; i < gs.nDigits; i++) {
                 if(guess[i] == gs.actual[i]) {
                     nRed++;
                 }
             }
 
-			//Logic for determining white return, based on: Weisstein, Eric W. "Mastermind." From MathWorld--A Wolfram Web Resource. http://mathworld.wolfram.com/Mastermind.html
+            //Logic for determining white return, based on: Weisstein, Eric W. "Mastermind." From MathWorld--A Wolfram Web Resource. http://mathworld.wolfram.com/Mastermind.html
             for(int i = 1; i <= gs.range; i++) {
                 int numGuess = 0;
                 int numActual = 0;
