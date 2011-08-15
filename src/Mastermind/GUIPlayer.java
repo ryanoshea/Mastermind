@@ -2,11 +2,11 @@ package Mastermind;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+//import java.io.BufferedReader;
+//import java.io.IOException;
+//import java.io.InputStreamReader;
+//import java.util.logging.Level;
+//import java.util.logging.Logger;
 
 /**
  * @author Ryan O'Shea
@@ -62,6 +62,15 @@ public class GUIPlayer extends javax.swing.JFrame implements Player, ActionListe
         jLabel5 = new javax.swing.JLabel();
         jTextFieldInput = new javax.swing.JTextField();
         jButtonSubmitInput = new javax.swing.JButton();
+        jPanelResults = new javax.swing.JPanel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabelLastGuessReds = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabelLastGuessWhites = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabelLastGuess = new javax.swing.JLabel();
+        jLabelgOverResult = new javax.swing.JLabel();
+        jLabelgOver = new javax.swing.JLabel();
 
         javax.swing.GroupLayout jFrame1Layout = new javax.swing.GroupLayout(jFrame1.getContentPane());
         jFrame1.getContentPane().setLayout(jFrame1Layout);
@@ -89,41 +98,41 @@ public class GUIPlayer extends javax.swing.JFrame implements Player, ActionListe
         setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         setResizable(false);
 
-        jLabelTitle.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        jLabelTitle.setFont(new java.awt.Font("Segoe UI", 1, 36));
         jLabelTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelTitle.setText("Mastermind");
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 13));
         jLabel1.setText("Game Rules");
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 12));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel2.setText("<html><p><strong>The object of the game is to guess a number, chosen at random.</strong> </p><p>Each guess will be compared to the target number. </p><p>A RED peg means that one of the numbers in your guess exists and is in the correct place in the target number. </p><p>A WHITE peg means that one of the numbers in your guess exists in the target number, but not in the same location as it is in your guess.</p></html>");
         jLabel2.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 13));
         jLabel3.setText("Game Status");
 
         jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
 
-        jLabelnDigits.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        jLabelnDigits.setFont(new java.awt.Font("Segoe UI", 0, 12));
         jLabelnDigits.setText("BLANK digits in the number you're trying to guess.");
 
-        jLabelRange.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        jLabelRange.setFont(new java.awt.Font("Segoe UI", 0, 12));
         jLabelRange.setText("Each digit ranges from 1-X");
 
-        jLabelRemainingGuesses.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        jLabelRemainingGuesses.setFont(new java.awt.Font("Segoe UI", 0, 12));
         jLabelRemainingGuesses.setText("You have X guesses left");
 
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 12));
         jLabel4.setText("Your Guesses");
 
-        jLabelrecGuesses.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        jLabelrecGuesses.setFont(new java.awt.Font("Segoe UI", 0, 12));
         jLabelrecGuesses.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel5.setText("Your Guess:");
+        jLabel5.setText("Your Next Guess:");
 
         jTextFieldInput.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jTextFieldInput.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -134,34 +143,111 @@ public class GUIPlayer extends javax.swing.JFrame implements Player, ActionListe
         jButtonSubmitInput.setText("Guess");
         jButtonSubmitInput.setEnabled(false);
 
+        jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
+        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel6.setText("Your Last Guess:");
+
+        jLabelLastGuessReds.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabelLastGuessReds.setForeground(new java.awt.Color(0, 153, 0));
+        jLabelLastGuessReds.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabelLastGuessReds.setText("0");
+
+        jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
+        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel8.setText("Reds:");
+
+        jLabelLastGuessWhites.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabelLastGuessWhites.setForeground(new java.awt.Color(153, 153, 153));
+        jLabelLastGuessWhites.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        jLabelLastGuessWhites.setText("0");
+
+        jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
+        jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel10.setText("Whites:");
+
+        jLabelLastGuess.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabelLastGuess.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+
+        javax.swing.GroupLayout jPanelResultsLayout = new javax.swing.GroupLayout(jPanelResults);
+        jPanelResults.setLayout(jPanelResultsLayout);
+        jPanelResultsLayout.setHorizontalGroup(
+            jPanelResultsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelResultsLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanelResultsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanelResultsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 757, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabelLastGuess, javax.swing.GroupLayout.PREFERRED_SIZE, 757, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelResultsLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabelLastGuessReds, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(41, 41, 41)
+                        .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabelLastGuessWhites, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(259, 259, 259)))
+                .addContainerGap())
+        );
+        jPanelResultsLayout.setVerticalGroup(
+            jPanelResultsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelResultsLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel6)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabelLastGuess, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanelResultsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel8)
+                    .addComponent(jLabelLastGuessReds)
+                    .addComponent(jLabel10)
+                    .addComponent(jLabelLastGuessWhites))
+                .addContainerGap())
+        );
+
+        jLabelgOverResult.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabelgOverResult.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabelgOverResult.setText("You Win!");
+
+        jLabelgOver.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabelgOver.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabelgOver.setText("GAME OVER");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(layout.createSequentialGroup()
-                                            .addGap(10, 10, 10)
-                                            .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addGap(654, 654, 654)))
-                                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 757, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED))
+                                .addGap(10, 10, 10)
+                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(654, 654, 654)))
+                        .addGap(36, 36, 36))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jPanelResults, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 757, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(319, 319, 319)
-                                .addComponent(jTextFieldInput, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(10, 10, 10))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addContainerGap(358, Short.MAX_VALUE)
-                        .addComponent(jButtonSubmitInput)
-                        .addGap(356, 356, 356)))
+                                .addGap(309, 309, 309)
+                                .addComponent(jTextFieldInput, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(347, 347, 347)
+                                .addComponent(jButtonSubmitInput)))
+                        .addGap(18, 18, 18))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabelgOverResult, javax.swing.GroupLayout.PREFERRED_SIZE, 757, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabelgOver, javax.swing.GroupLayout.PREFERRED_SIZE, 757, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)))
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
@@ -179,7 +265,7 @@ public class GUIPlayer extends javax.swing.JFrame implements Player, ActionListe
                         .addGap(26, 26, 26)
                         .addComponent(jLabelrecGuesses, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addGap(18, 18, 18))
-            .addComponent(jLabelTitle, javax.swing.GroupLayout.DEFAULT_SIZE, 1102, Short.MAX_VALUE)
+            .addComponent(jLabelTitle, javax.swing.GroupLayout.DEFAULT_SIZE, 1122, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -189,6 +275,22 @@ public class GUIPlayer extends javax.swing.JFrame implements Player, ActionListe
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel3)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jLabelnDigits)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabelRange)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabelRemainingGuesses)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel4)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabelrecGuesses, javax.swing.GroupLayout.PREFERRED_SIZE, 303, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 617, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -197,25 +299,21 @@ public class GUIPlayer extends javax.swing.JFrame implements Player, ActionListe
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jTextFieldInput, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButtonSubmitInput))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabelnDigits)
+                        .addComponent(jButtonSubmitInput)
+                        .addGap(30, 30, 30)
+                        .addComponent(jPanelResults, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 69, Short.MAX_VALUE)
+                        .addComponent(jLabelgOver, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabelRange)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabelRemainingGuesses)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel4)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabelrecGuesses, javax.swing.GroupLayout.PREFERRED_SIZE, 303, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 617, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(jLabelgOverResult, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(59, 59, 59))))
         );
 
         jLabel2.getAccessibleContext().setAccessibleName("");
         jLabel2.getAccessibleContext().setAccessibleDescription("");
+        jPanelResults.setVisible(false);
+        jLabelgOverResult.setVisible(false);
+        jLabelgOver.setVisible(false);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -260,15 +358,24 @@ public class GUIPlayer extends javax.swing.JFrame implements Player, ActionListe
     private javax.swing.JFrame jFrame1;
     private javax.swing.JFrame jFrame2;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabelLastGuess;
+    private javax.swing.JLabel jLabelLastGuessReds;
+    private javax.swing.JLabel jLabelLastGuessWhites;
     private javax.swing.JLabel jLabelRange;
     private javax.swing.JLabel jLabelRemainingGuesses;
     private javax.swing.JLabel jLabelTitle;
+    private javax.swing.JLabel jLabelgOver;
+    private javax.swing.JLabel jLabelgOverResult;
     private javax.swing.JLabel jLabelnDigits;
     private javax.swing.JLabel jLabelrecGuesses;
+    private javax.swing.JPanel jPanelResults;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTextField jTextFieldInput;
     // End of variables declaration//GEN-END:variables
@@ -279,14 +386,14 @@ public class GUIPlayer extends javax.swing.JFrame implements Player, ActionListe
     public void acceptGameState(GameState gs) {
         this.gs = gs;
         
-        dumpGameStateToGUI();
+        dumpGameState(false);
     }
 
     public int[] getNextGuess() {
         int[] guess;
         char[] inputCharArray;
         
-        dumpGameStateToGUI();
+        dumpGameState(false);
         
         //code here to prompt user for a guess, store it in input
         this.jButtonSubmitInput.setEnabled(true);
@@ -322,23 +429,64 @@ public class GUIPlayer extends javax.swing.JFrame implements Player, ActionListe
         this.jTextFieldInput.setText("");
     }
     
-    private void dumpGameStateToGUI() {
-        this.jLabelnDigits.setText(gs.nDigits + " digits in the number you're trying to guess");
-        this.jLabelRange.setText("Each digit ranges from 1-" + gs.range);
-        this.jLabelRemainingGuesses.setText("You have "  + (gs.nGuesses - gs.idxGuess) + " guesses left of " + gs.nGuesses + " total");
-        
-        this.jLabelrecGuesses.setText("<html>");
-        
-        for(int i = 0; i < gs.idxGuess; i++) {
+    public void dumpGameState(boolean gOver) {
+        if(gOver == false) {
             
-            for(int k = 0; k < gs.nDigits; k++) {
-                this.jLabelrecGuesses.setText("" + this.jLabelrecGuesses.getText() + gs.recGuesses[i][k]);
+            this.jLabelnDigits.setText(gs.nDigits + " digits in the number you're trying to guess");
+            this.jLabelRange.setText("Each digit ranges from 1-" + gs.range);
+            this.jLabelRemainingGuesses.setText("You have "  + (gs.nGuesses - gs.idxGuess) + " guesses left of " + gs.nGuesses + " total");
+
+            this.jLabelrecGuesses.setText("<html>");
+
+            for(int i = 0; i < gs.idxGuess; i++) {
+
+                for(int k = 0; k < gs.nDigits; k++) {
+                    this.jLabelrecGuesses.setText("" + this.jLabelrecGuesses.getText() + gs.recGuesses[i][k]);
+                }
+
+                this.jLabelrecGuesses.setText(this.jLabelrecGuesses.getText() + " | Reds: " + gs.recRed[i] + " | Whites: " + gs.recWhite[i]);
+                this.jLabelrecGuesses.setText(this.jLabelrecGuesses.getText() + "<br>");
             }
 
-            this.jLabelrecGuesses.setText(this.jLabelrecGuesses.getText() + "    " + gs.recRed[i] + "    " + gs.recWhite[i]);
-            this.jLabelrecGuesses.setText(this.jLabelrecGuesses.getText() + "<br>");
+            this.jLabelrecGuesses.setText(this.jLabelrecGuesses.getText() + "</html>");
+            
+        } else if(gOver == true){
+            this.jLabelnDigits.setText(gs.nDigits + " digits in the number you're trying to guess");
+            this.jLabelRange.setText("Each digit ranges from 1-" + gs.range);
+            this.jLabelRemainingGuesses.setText("You have "  + (gs.nGuesses - gs.idxGuess) + " guesses left of " + gs.nGuesses + " total");
+
+            this.jLabelrecGuesses.setText("<html>");
+
+            for(int i = 0; i < gs.idxGuess; i++) {
+
+                for(int k = 0; k < gs.nDigits; k++) {
+                    this.jLabelrecGuesses.setText("" + this.jLabelrecGuesses.getText() + gs.recGuesses[i][k]);
+                }
+
+                this.jLabelrecGuesses.setText(this.jLabelrecGuesses.getText() + " | Reds: " + gs.recRed[i] + " | Whites: " + gs.recWhite[i]);
+                this.jLabelrecGuesses.setText(this.jLabelrecGuesses.getText() + "<br>");
+            }
+
+            this.jLabelrecGuesses.setText(this.jLabelrecGuesses.getText() + "</html>");
+            
+            this.jLabelgOver.setVisible(true);
+            this.jLabelgOverResult.setVisible(true);
+            this.jLabelgOverResult.setText("You Win!");
+        }
+    }
+    
+    public void displayResult() {
+        
+        this.jPanelResults.setVisible(true);
+        
+        this.jLabelLastGuess.setText("");
+        
+        for(int k = 0; k < gs.nDigits; k++) {
+            this.jLabelLastGuess.setText("" + this.jLabelLastGuess.getText() + gs.recGuesses[gs.idxGuess - 1][k]);
         }
         
-        this.jLabelrecGuesses.setText(this.jLabelrecGuesses.getText() + "</html>");
+        this.jLabelLastGuessReds.setText("" + gs.recRed[gs.idxGuess - 1]);
+        this.jLabelLastGuessWhites.setText("" + gs.recWhite[gs.idxGuess - 1]);
+        
     }
 }

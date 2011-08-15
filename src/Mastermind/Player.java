@@ -24,4 +24,6 @@ public interface Player {
     public void acceptGameState(GameState gs);  //called once at beginning of Game
     public int[] getNextGuess();                //should return player's next guess
                                                 //can assume that only last return code of GameState has changed since last called
+    public void dumpGameState(boolean gOver);
+    public void displayResult();
 }

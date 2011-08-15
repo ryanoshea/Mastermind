@@ -75,11 +75,12 @@ public class Game {
             }
 
             nWhite = nWhite - nRed;
-            System.out.println("Results:  Red: " + nRed + "  White: " + nWhite);
+            
             gs.processGuess(guess, nRed, nWhite);
+            player.displayResult();
 
             if(nRed == gs.nDigits) {
-                gs.playerDump(true);
+                player.dumpGameState(true);
                 break;
             }
             

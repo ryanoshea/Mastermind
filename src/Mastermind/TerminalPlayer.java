@@ -40,7 +40,7 @@ public class TerminalPlayer implements Player {
         char[] inputCharArray;
         String input = new String();
 
-        gs.playerDump(false);
+        dumpGameState(false);
 
         System.out.println("Type your Guess: ");
 
@@ -63,5 +63,46 @@ public class TerminalPlayer implements Player {
         }
 
         return guess;
+    }
+    
+    public void dumpGameState(boolean gOver) {
+        if(gOver == false) {
+            System.out.println("\n");
+            System.out.println("Current Game: ");
+            System.out.println("\t# of Digits: " + gs.nDigits);
+            System.out.println("\tRange: 1-" + gs.range);
+            System.out.println("\t# of Guesses Left: " + (gs.nGuesses - gs.idxGuess) + " of " + gs.nGuesses);
+            System.out.println("\n Your Guesses & Returns: ");
+                for(int i = 0; i < gs.idxGuess; i++) {
+                    System.out.print("\t\t");
+
+                    for(int k = 0; k < gs.nDigits; k++) {
+                        System.out.print(gs.recGuesses[i][k]);
+                    }
+
+                    System.out.print("\t" + gs.recRed[i] + "\t" + gs.recWhite[i]);
+                    System.out.print("\n");
+                }
+        } else if(gOver == true) {
+            System.out.println("\nYou Won!!\n");
+            System.out.println("Game Stats: ");
+            System.out.println("\t# of Digits: " + gs.nDigits);
+            System.out.println("\tRange: 1-" + gs.range);
+            System.out.println("\n Your Guesses & Returns: ");
+                for(int i = 0; i < gs.idxGuess; i++) {
+                    System.out.print("\t\t");
+
+                    for(int k = 0; k < gs.nDigits; k++) {
+                        System.out.print(gs.recGuesses[i][k]);
+                    }
+
+                    System.out.print("\t" + gs.recRed[i] + "\t" + gs.recWhite[i]);
+                    System.out.print("\n");
+                }
+        }
+    }
+    
+    public void displayResult() {
+        System.out.println("Results:  Red: " + gs.recRed[gs.idxGuess - 1] + "  White: " + gs.recWhite[gs.idxGuess - 1]);
     }
 }

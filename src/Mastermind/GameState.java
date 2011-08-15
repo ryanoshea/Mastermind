@@ -81,43 +81,6 @@ public class GameState {
         return idxGuess >= nGuesses;
     }
 
-    public void playerDump(boolean gOver) {
-        if(gOver == false) {
-            System.out.println("\n");
-            System.out.println("Current Game: ");
-            System.out.println("\t# of Digits: " + nDigits);
-            System.out.println("\tRange: 1-" + range);
-            System.out.println("\t# of Guesses Left: " + (nGuesses - idxGuess) + " of " + nGuesses);
-            System.out.println("\n Your Guesses & Returns: ");
-                for(int i = 0; i < idxGuess; i++) {
-                    System.out.print("\t\t");
-
-                    for(int k = 0; k < nDigits; k++) {
-                        System.out.print(recGuesses[i][k]);
-                    }
-
-                    System.out.print("\t" + recRed[i] + "\t" + recWhite[i]);
-                    System.out.print("\n");
-                }
-        } else if(gOver == true) {
-            System.out.println("\nYou Won!!\n");
-            System.out.println("Game Stats: ");
-            System.out.println("\t# of Digits: " + nDigits);
-            System.out.println("\tRange: 1-" + range);
-            System.out.println("\n Your Guesses & Returns: ");
-                for(int i = 0; i < idxGuess; i++) {
-                    System.out.print("\t\t");
-
-                    for(int k = 0; k < nDigits; k++) {
-                        System.out.print(recGuesses[i][k]);
-                    }
-
-                    System.out.print("\t" + recRed[i] + "\t" + recWhite[i]);
-                    System.out.print("\n");
-                }
-        }
-    }
-
     public void dump() {
         System.out.println("Current Game State:");
         System.out.println("\tnDigits: " + nDigits);
