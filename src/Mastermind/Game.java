@@ -79,7 +79,11 @@ public class Game {
             gs.processGuess(guess, nRed, nWhite);
             player.displayResult();
 
-            if(nRed == gs.nDigits) {
+            if (nRed == gs.nDigits) {
+                player.dumpGameState(true);
+                break;
+            } 
+            if (gs.idxGuess >= gs.nGuesses) {
                 player.dumpGameState(true);
                 break;
             }
