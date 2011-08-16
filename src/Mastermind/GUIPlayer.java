@@ -2,6 +2,8 @@ package Mastermind;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.SpinnerModel;
+import javax.swing.SpinnerNumberModel;
 
 /**
  * @author Ryan O'Shea
@@ -25,7 +27,8 @@ import java.awt.event.ActionListener;
  *  along with Mastermind (see the "COPYING" file).  If not, see <http://www.gnu.org/licenses/>.
  */
 
-public class GUIPlayer extends javax.swing.JFrame implements Player, ActionListener {
+public class GUIPlayer extends javax.swing.JFrame 
+                       implements Player, ActionListener {
 
     /** Creates new form GUIPlayer */
     public GUIPlayer() {
@@ -93,7 +96,7 @@ public class GUIPlayer extends javax.swing.JFrame implements Player, ActionListe
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        setFont(new java.awt.Font("Segoe UI", 0, 12));
         setResizable(false);
 
         jLabelTitle.setFont(new java.awt.Font("Segoe UI", 1, 36));
@@ -108,7 +111,7 @@ public class GUIPlayer extends javax.swing.JFrame implements Player, ActionListe
         jLabel2.setText("<html><p><strong>The object of the game is to guess a number, chosen at random.</strong> </p><p>Each guess will be compared to the target number. </p><p>A RED peg means that one of the numbers in your guess exists and is in the correct place in the target number. </p><p>A WHITE peg means that one of the numbers in your guess exists in the target number, but not in the same location as it is in your guess.</p></html>");
         jLabel2.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 13));
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
         jLabel3.setText("Game Status");
 
         jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
@@ -116,7 +119,7 @@ public class GUIPlayer extends javax.swing.JFrame implements Player, ActionListe
         jLabelnDigits.setFont(new java.awt.Font("Segoe UI", 0, 12));
         jLabelnDigits.setText("BLANK digits in the number you're trying to guess.");
 
-        jLabelRange.setFont(new java.awt.Font("Segoe UI", 0, 12));
+        jLabelRange.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jLabelRange.setText("Each digit ranges from 1-X");
 
         jLabelRemainingGuesses.setFont(new java.awt.Font("Segoe UI", 0, 12));
@@ -125,40 +128,40 @@ public class GUIPlayer extends javax.swing.JFrame implements Player, ActionListe
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 12));
         jLabel4.setText("Your Guesses");
 
-        jLabelrecGuesses.setFont(new java.awt.Font("Segoe UI", 0, 12));
+        jLabelrecGuesses.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jLabelrecGuesses.setVerticalAlignment(javax.swing.SwingConstants.TOP);
 
-        jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 13));
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel5.setText("Your Next Guess:");
 
-        jButtonSubmitInput.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
+        jButtonSubmitInput.setFont(new java.awt.Font("Segoe UI", 0, 11));
         jButtonSubmitInput.setText("Guess");
         jButtonSubmitInput.setEnabled(false);
 
-        jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 13));
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel6.setText("Your Last Guess:");
 
-        jLabelLastGuessReds.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabelLastGuessReds.setFont(new java.awt.Font("Segoe UI", 0, 24));
         jLabelLastGuessReds.setForeground(new java.awt.Color(0, 153, 0));
         jLabelLastGuessReds.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabelLastGuessReds.setText("0");
 
-        jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
+        jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 13));
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel8.setText("Reds:");
 
-        jLabelLastGuessWhites.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabelLastGuessWhites.setFont(new java.awt.Font("Segoe UI", 0, 24));
         jLabelLastGuessWhites.setForeground(new java.awt.Color(153, 153, 153));
         jLabelLastGuessWhites.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabelLastGuessWhites.setText("0");
 
-        jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
+        jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 13));
         jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel10.setText("Whites:");
 
-        jLabelLastGuess.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabelLastGuess.setFont(new java.awt.Font("Segoe UI", 1, 24));
         jLabelLastGuess.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
         javax.swing.GroupLayout jPanelResultsLayout = new javax.swing.GroupLayout(jPanelResults);
@@ -196,21 +199,25 @@ public class GUIPlayer extends javax.swing.JFrame implements Player, ActionListe
                 .addContainerGap())
         );
 
-        jLabelgOverResult.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabelgOverResult.setFont(new java.awt.Font("Segoe UI", 1, 18));
         jLabelgOverResult.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelgOverResult.setText("You Win!");
 
-        jLabelgOver.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabelgOver.setFont(new java.awt.Font("Segoe UI", 1, 18));
         jLabelgOver.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelgOver.setText("GAME OVER");
 
         jSpinnerInput1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jSpinnerInput1.setModel(new javax.swing.SpinnerNumberModel(1, 1, 5, 1));
 
         jSpinnerInput2.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jSpinnerInput2.setModel(new javax.swing.SpinnerNumberModel(1, 1, 5, 1));
 
         jSpinnerInput3.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jSpinnerInput3.setModel(new javax.swing.SpinnerNumberModel(1, 1, 5, 1));
 
-        jSpinnerInput4.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jSpinnerInput4.setFont(new java.awt.Font("Segoe UI", 1, 24));
+        jSpinnerInput4.setModel(new javax.swing.SpinnerNumberModel(1, 1, 5, 1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -236,27 +243,30 @@ public class GUIPlayer extends javax.swing.JFrame implements Player, ActionListe
                                     .addComponent(jSpinnerInput4, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(10, 10, 10)
-                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(54, 54, 54))
+                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                 .addComponent(jLabelgOverResult, javax.swing.GroupLayout.PREFERRED_SIZE, 757, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(jLabelgOver, javax.swing.GroupLayout.PREFERRED_SIZE, 757, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGap(28, 28, 28)
                         .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabelRange, javax.swing.GroupLayout.PREFERRED_SIZE, 279, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabelRemainingGuesses, javax.swing.GroupLayout.PREFERRED_SIZE, 279, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 279, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addGap(10, 10, 10)
-                                    .addComponent(jLabelnDigits, javax.swing.GroupLayout.PREFERRED_SIZE, 279, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabelrecGuesses, javax.swing.GroupLayout.DEFAULT_SIZE, 295, Short.MAX_VALUE)
-                .addContainerGap())
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabelRange, javax.swing.GroupLayout.PREFERRED_SIZE, 279, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabelRemainingGuesses, javax.swing.GroupLayout.PREFERRED_SIZE, 279, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGroup(layout.createSequentialGroup()
+                                            .addGap(10, 10, 10)
+                                            .addComponent(jLabelnDigits, javax.swing.GroupLayout.PREFERRED_SIZE, 279, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 279, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(40, 40, 40)
+                                .addComponent(jLabelrecGuesses, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 6, Short.MAX_VALUE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -274,11 +284,10 @@ public class GUIPlayer extends javax.swing.JFrame implements Player, ActionListe
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabelRemainingGuesses)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel4))
-                    .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 617, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(117, 117, 117)
+                        .addComponent(jLabel4)
+                        .addGap(18, 18, 18)
                         .addComponent(jLabelrecGuesses, javax.swing.GroupLayout.PREFERRED_SIZE, 303, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 617, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -382,6 +391,15 @@ public class GUIPlayer extends javax.swing.JFrame implements Player, ActionListe
     public void acceptGameState(GameState gs) {
         this.gs = gs;
         
+        SpinnerModel model1 = new SpinnerNumberModel(1, 1, gs.range, 1);
+        SpinnerModel model2 = new SpinnerNumberModel(1, 1, gs.range, 1);
+        SpinnerModel model3 = new SpinnerNumberModel(1, 1, gs.range, 1);
+        SpinnerModel model4 = new SpinnerNumberModel(1, 1, gs.range, 1);
+        this.jSpinnerInput1.setModel(model1);
+        this.jSpinnerInput2.setModel(model2);
+        this.jSpinnerInput3.setModel(model3);
+        this.jSpinnerInput4.setModel(model4);
+        
         dumpGameState(false);
     }
 
@@ -397,16 +415,16 @@ public class GUIPlayer extends javax.swing.JFrame implements Player, ActionListe
         this.jSpinnerInput3.setEnabled(true);
         this.jSpinnerInput4.setEnabled(true);
         
-        while("".equals(input)) { //creates infinite loop to wait until button is pressed and the jTextFieldInput has something it it
+        while(!input.equals(this.jSpinnerInput1.getValue().toString() + this.jSpinnerInput2.getValue().toString() + this.jSpinnerInput3.getValue().toString() + this.jSpinnerInput4.getValue().toString())) { //creates infinite loop to wait until button is pressed and the jTextFieldInput has something it it
         }
         
         guess = new int[gs.nDigits];
 
-        inputCharArray = new char[gs.nDigits];
+        //inputCharArray = new char[gs.nDigits];
         inputCharArray = input.toCharArray();
         input = "";
 
-        for(int i = 0; i< gs.nDigits; i++) {
+        for(int i = 0; i < gs.nDigits; i++) {
             guess[i] = Integer.parseInt(String.valueOf(inputCharArray[i]));
         }
 
@@ -415,18 +433,23 @@ public class GUIPlayer extends javax.swing.JFrame implements Player, ActionListe
     }
     
     public void actionPerformed(ActionEvent e) {
-        if (isInteger(this.jSpinnerInput1.toString())) {
-            input = input + this.jSpinnerInput1.toString();
-        }
-        if (isInteger(this.jSpinnerInput2.toString())) {
-            input = input + this.jSpinnerInput2.toString();
-        }
-        if (isInteger(this.jSpinnerInput3.toString())) {
-            input = input + this.jSpinnerInput3.toString();
-        }
-        if (isInteger(this.jSpinnerInput4.toString())) {
-            input = input + this.jSpinnerInput4.toString();
-        }
+//        if (isInteger(this.jSpinnerInput1.getValue().toString())) {
+//            input = input + this.jSpinnerInput1.getValue().toString();
+//        }
+//        if (isInteger(this.jSpinnerInput2.getValue().toString())) {
+//            input = input + this.jSpinnerInput2.getValue().toString();
+//        }
+//        if (isInteger(this.jSpinnerInput3.getValue().toString())) {
+//            input = input + this.jSpinnerInput3.getValue().toString();
+//        }
+//        if (isInteger(this.jSpinnerInput4.getValue().toString())) {
+//            input = input + this.jSpinnerInput4.getValue().toString();
+//        }
+        
+        input = this.jSpinnerInput1.getValue().toString();
+        input = input + this.jSpinnerInput2.getValue().toString();
+        input = input + this.jSpinnerInput3.getValue().toString();
+        input = input + this.jSpinnerInput4.getValue().toString();
     }
     
     public void dumpGameState(boolean gOver) {
