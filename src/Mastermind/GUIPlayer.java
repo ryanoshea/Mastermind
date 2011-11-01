@@ -527,10 +527,10 @@ public class GUIPlayer extends javax.swing.JFrame
             
             this.jLabelgOver.setVisible(true);
             this.jLabelgOverResult.setVisible(true);
-            if (gs.idxGuess >= gs.nGuesses) {
+            if (gs.idxGuess <= gs.nGuesses) {
                 this.jLabelgOverResult.setText("You Win!");
             }
-            if (gs.idxGuess >= gs.nGuesses) {
+            if (gs.idxGuess > gs.nGuesses) {
                 this.jLabelgOverResult.setText("You lose.");
             }
         }
