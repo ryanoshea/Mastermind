@@ -78,6 +78,7 @@ public class GUIPlayer extends javax.swing.JFrame
         jSpinnerInput8 = new javax.swing.JSpinner();
         jSpinnerInput9 = new javax.swing.JSpinner();
         jSpinnerInput10 = new javax.swing.JSpinner();
+        jLabel7 = new javax.swing.JLabel();
 
         javax.swing.GroupLayout jFrame1Layout = new javax.swing.GroupLayout(jFrame1.getContentPane());
         jFrame1.getContentPane().setLayout(jFrame1Layout);
@@ -286,6 +287,11 @@ public class GUIPlayer extends javax.swing.JFrame
         getContentPane().add(jSpinnerInput10, new org.netbeans.lib.awtextra.AbsoluteConstraints(425, 208, 39, 39));
         jSpinnerInput10.setVisible(false);
 
+        jLabel7.setFont(new java.awt.Font("Consolas", 0, 11)); // NOI18N
+        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel7.setText("Mastermind was coded by Ryan O'Shea, and is licensed under the GPL. You are free to view the source and make any changes, as long as you give me credit.");
+        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 560, 940, -1));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -293,7 +299,7 @@ public class GUIPlayer extends javax.swing.JFrame
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
+        /* Set the Nimbus look and feel */ 
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
@@ -335,6 +341,7 @@ public class GUIPlayer extends javax.swing.JFrame
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabelLastGuess;
     private javax.swing.JLabel jLabelLastGuessReds;

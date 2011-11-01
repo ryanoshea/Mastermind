@@ -1,22 +1,30 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
-/*
- * GameConfig.java
- *
- * Created on Nov 1, 2011, 1:15:14 AM
- */
 package Mastermind;
 
 import javax.swing.SpinnerModel;
 import javax.swing.SpinnerNumberModel;
 
 /**
+ * @author Ryan O'Shea
  *
- * @author Ryan
+ * Copyright © 2009-2011 Ryan O'Shea
+ *
+ * Copying Permissions: 
+ * 	This file is part of Mastermind.
+ *
+ * 	Mastermind is free software: you can redistribute it and/or modify
+ * 	it under the terms of the GNU General Public License as published by
+ * 	the Free Software Foundation, either version 3 of the License, or
+ * 	(at your option) any later version.
+ * 
+ * 	Mastermind is distributed in the hope that it will be useful,
+ * 	but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * 	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * 	GNU General Public License for more details.
+ *
+ * 	You should have received a copy of the GNU General Public License
+ *  along with Mastermind (see the "COPYING" file).  If not, see <http://www.gnu.org/licenses/>.
  */
+
 public class GameConfig extends javax.swing.JFrame {
 
     /** Creates new form GameConfig */
@@ -49,99 +57,60 @@ public class GameConfig extends javax.swing.JFrame {
         jButtonSubmitConfig = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jSpinnerRange.setFont(new java.awt.Font("Segoe UI", 1, 24));
+        getContentPane().add(jSpinnerRange, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 258, 54, -1));
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 0, 18));
         jLabel5.setText("Guesses Allowed:");
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(115, 316, -1, -1));
 
         jSpinnerNDigits.setFont(new java.awt.Font("Segoe UI", 1, 24));
+        getContentPane().add(jSpinnerNDigits, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 209, 54, -1));
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 0, 18));
         jLabel4.setText("Range of each Digit: 1 to");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(55, 267, -1, -1));
 
         jSpinnerNGuesses.setFont(new java.awt.Font("Segoe UI", 1, 24));
+        getContentPane().add(jSpinnerNGuesses, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 307, 54, -1));
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 18));
         jLabel3.setText("Number of Digits to Guess:");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(36, 218, -1, -1));
 
-        jLabelTitle.setFont(new java.awt.Font("Segoe UI", 1, 36));
+        jLabelTitle.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabelTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelTitle.setText("Mastermind");
+        getContentPane().add(jLabelTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 11, 410, 42));
 
-        jButtonSubmitConfig.setFont(new java.awt.Font("Segoe UI", 1, 22));
+        jButtonSubmitConfig.setFont(new java.awt.Font("Segoe UI", 1, 22)); // NOI18N
         jButtonSubmitConfig.setText("Start Game");
         jButtonSubmitConfig.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonSubmitConfigActionPerformed(evt);
             }
         });
+        getContentPane().add(jButtonSubmitConfig, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 360, 216, 40));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 12));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel2.setText("<html><p><strong>The object of the game is to guess a number, chosen at random.</strong> </p><p>Each guess will be compared to the target number. </p><p>A RED peg means that one of the numbers in your guess exists and is in the correct place in the target number. </p><p>A WHITE peg means that one of the numbers in your guess exists in the target number, but not in the same location as it is in your guess.</p></html>");
         jLabel2.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 95, 380, -1));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 13));
         jLabel1.setText("Game Rules");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 71, 95, -1));
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addComponent(jLabelTitle, javax.swing.GroupLayout.DEFAULT_SIZE, 410, Short.MAX_VALUE)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(36, 36, 36)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButtonSubmitConfig, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel3))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jSpinnerNDigits, javax.swing.GroupLayout.DEFAULT_SIZE, 54, Short.MAX_VALUE)
-                            .addComponent(jSpinnerRange)
-                            .addComponent(jSpinnerNGuesses))))
-                .addContainerGap(86, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabelTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(jSpinnerNDigits, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(jSpinnerRange, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(jSpinnerNGuesses, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(jButtonSubmitConfig, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(54, Short.MAX_VALUE))
-        );
+        jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
+        jLabel6.setText("by Ryan O'Shea");
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 410, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -199,6 +168,7 @@ public class GameConfig extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabelTitle;
     private javax.swing.JSpinner jSpinnerNDigits;
     private javax.swing.JSpinner jSpinnerNGuesses;
