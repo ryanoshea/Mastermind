@@ -80,11 +80,10 @@ public class Game {
             player.displayResult();
 
             if (nRed == gs.nDigits) {
-                player.dumpGameState(true);
+                player.dumpGameState(true, true);
                 break;
-            } 
-            if (gs.idxGuess >= gs.nGuesses) {
-                player.dumpGameState(true);
+            } else if (gs.idxGuess >= gs.nGuesses) {
+                player.dumpGameState(true, false);
                 break;
             }
             

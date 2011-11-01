@@ -424,14 +424,14 @@ public class GUIPlayer extends javax.swing.JFrame
             this.jSpinnerInput10.setVisible(true);
         }
         
-        dumpGameState(false);
+        dumpGameState(false, false);
     }
 
     public int[] getNextGuess() {
         int[] guess;
         char[] inputCharArray;
         
-        dumpGameState(false);
+        dumpGameState(false, false);
         
         this.jButtonSubmitInput.setEnabled(true);
         
@@ -485,7 +485,7 @@ public class GUIPlayer extends javax.swing.JFrame
         }
     }
     
-    public void dumpGameState(boolean gOver) {
+    public void dumpGameState(boolean gOver, boolean victory) {
         if(gOver == false) {
             
             this.jLabelnDigits.setText(gs.nDigits + " digits in the number you're trying to guess");
@@ -527,11 +527,12 @@ public class GUIPlayer extends javax.swing.JFrame
             
             this.jLabelgOver.setVisible(true);
             this.jLabelgOverResult.setVisible(true);
-            if (gs.idxGuess <= gs.nGuesses) {
-                this.jLabelgOverResult.setText("You Win!");
-            }
-            if (gs.idxGuess > gs.nGuesses) {
+            
+            if (victory == false) {
                 this.jLabelgOverResult.setText("You lose.");
+            }
+			if (victory == true) {
+                this.jLabelgOverResult.setText("You Win!");
             }
         }
     }
@@ -559,4 +560,5 @@ public class GUIPlayer extends javax.swing.JFrame
             return false;
         }
     }
+
 }

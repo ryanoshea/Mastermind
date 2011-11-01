@@ -40,7 +40,7 @@ public class TerminalPlayer implements Player {
         char[] inputCharArray;
         String input = new String();
 
-        dumpGameState(false);
+        dumpGameState(false, false);
 
         System.out.println("Type your Guess: ");
 
@@ -65,7 +65,7 @@ public class TerminalPlayer implements Player {
         return guess;
     }
     
-    public void dumpGameState(boolean gOver) {
+    public void dumpGameState(boolean gOver, boolean victory) {
         if(gOver == false) {
             System.out.println("\n");
             System.out.println("Current Game: ");

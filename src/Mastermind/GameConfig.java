@@ -32,9 +32,9 @@ public class GameConfig extends javax.swing.JFrame {
 	initComponents();
 	SpinnerModel model1 = new SpinnerNumberModel(4, 1, 10, 1);
         this.jSpinnerNDigits.setModel(model1);
-	SpinnerModel model2 = new SpinnerNumberModel(4, 1, 9, 1);
+	SpinnerModel model2 = new SpinnerNumberModel(4, 2, 9, 1);
         this.jSpinnerRange.setModel(model2);
-	SpinnerModel model3 = new SpinnerNumberModel(10, 1, 99, 1);
+	SpinnerModel model3 = new SpinnerNumberModel(10, 1, 20, 1);
         this.jSpinnerNGuesses.setModel(model3);
     }
 
