@@ -424,15 +424,6 @@ public class GUIPlayer extends javax.swing.JFrame
             this.jSpinnerInput10.setVisible(true);
         }
         
-//        SpinnerModel model1 = new SpinnerNumberModel(1, 1, gs.range, 1);
-//        SpinnerModel model2 = new SpinnerNumberModel(1, 1, gs.range, 1);
-//        SpinnerModel model3 = new SpinnerNumberModel(1, 1, gs.range, 1);
-//        SpinnerModel model4 = new SpinnerNumberModel(1, 1, gs.range, 1);
-//        this.jSpinnerInput1.setModel(model1);
-//        this.jSpinnerInput2.setModel(model2);
-//        this.jSpinnerInput3.setModel(model3);
-//        this.jSpinnerInput4.setModel(model4);
-        
         dumpGameState(false);
     }
 
@@ -443,10 +434,6 @@ public class GUIPlayer extends javax.swing.JFrame
         dumpGameState(false);
         
         this.jButtonSubmitInput.setEnabled(true);
-//        this.jSpinnerInput1.setEnabled(true);
-//        this.jSpinnerInput2.setEnabled(true);
-//        this.jSpinnerInput3.setEnabled(true);
-//        this.jSpinnerInput4.setEnabled(true);
         
         while(input.toCharArray().length < gs.nDigits) { //creates infinite loop to wait until button is pressed and the jTextFieldInput has something it it
         }

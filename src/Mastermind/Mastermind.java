@@ -40,19 +40,20 @@ public class Mastermind {
 	player.setVisible(true);
 	Game game = new Game(player, nDigits, range, nGuesses);
 	game.play();
-//        String playerType = args[3];
-//        
-//        if ("terminal".equals(playerType)){
-//            TerminalPlayer player = new TerminalPlayer();
-//            Game game = new Game(player, Integer.parseInt(args[0]), Integer.parseInt(args[1]), Integer.parseInt(args[2]));
-//            game.play();
-//            
-//        } else if ("GUI".equals(playerType)) {
-//            GUIPlayer player = new GUIPlayer();
-//            player.setVisible(true);
-//            Game game = new Game(player, Integer.parseInt(args[0]), Integer.parseInt(args[1]), Integer.parseInt(args[2]));
-//            game.play();
-//        } 
+	
+//	String playerType = args[3];
+//
+//	if ("terminal".equals(playerType)){
+//		TerminalPlayer player = new TerminalPlayer();
+//		Game game = new Game(player, Integer.parseInt(args[0]), Integer.parseInt(args[1]), Integer.parseInt(args[2]));
+//		game.play();
+//
+//	} else if ("GUI".equals(playerType)) {
+//		GUIPlayer player = new GUIPlayer();
+//		player.setVisible(true);
+//		Game game = new Game(player, Integer.parseInt(args[0]), Integer.parseInt(args[1]), Integer.parseInt(args[2]));
+//		game.play();
+//	} 
         
     }
 }
