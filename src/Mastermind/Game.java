@@ -37,7 +37,8 @@ public class Game {
     public void play() {
         player.acceptGameState(gs);
         
-        while(!gs.isComplete()) {
+        //while(!gs.isComplete()) {
+		while(1<2) {
             int[] guess = player.getNextGuess();
 
             nRed = 0;
@@ -81,14 +82,14 @@ public class Game {
 
             if (nRed == gs.nDigits) {
                 player.dumpGameState(true, true);
-                break;
+                //break;
             } else if (gs.idxGuess >= gs.nGuesses) {
                 player.dumpGameState(true, false);
-                break;
+                //break;
             }
             
         }
 
-        System.out.println("Game Completed!");
+        //System.out.println("Game Completed!");
     }
 }

@@ -55,7 +55,7 @@ public class GUIPlayer extends javax.swing.JFrame
         jSeparator1 = new javax.swing.JSeparator();
         jLabelnDigits = new javax.swing.JLabel();
         jLabelRange = new javax.swing.JLabel();
-        jLabelRemainingGuesses = new javax.swing.JLabel();
+        jLabelRemainingGuesses2 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabelrecGuesses = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
@@ -81,6 +81,7 @@ public class GUIPlayer extends javax.swing.JFrame
         jSpinnerInput10 = new javax.swing.JSpinner();
         jLabel7 = new javax.swing.JLabel();
         jButtonReset = new javax.swing.JButton();
+        jLabelRemainingGuesses1 = new javax.swing.JLabel();
 
         javax.swing.GroupLayout jFrame1Layout = new javax.swing.GroupLayout(jFrame1.getContentPane());
         jFrame1.getContentPane().setLayout(jFrame1Layout);
@@ -106,7 +107,7 @@ public class GUIPlayer extends javax.swing.JFrame
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Mastermind");
-        setFont(new java.awt.Font("Segoe UI", 0, 12));
+        setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -142,9 +143,10 @@ public class GUIPlayer extends javax.swing.JFrame
         jLabelRange.setText("Each digit ranges from 1-X");
         getContentPane().add(jLabelRange, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 100, 279, 20));
 
-        jLabelRemainingGuesses.setFont(new java.awt.Font("Segoe UI", 0, 12));
-        jLabelRemainingGuesses.setText("You have X guesses left");
-        getContentPane().add(jLabelRemainingGuesses, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 120, 279, 20));
+        jLabelRemainingGuesses2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabelRemainingGuesses2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabelRemainingGuesses2.setText("X guesses left");
+        getContentPane().add(jLabelRemainingGuesses2, new org.netbeans.lib.awtextra.AbsoluteConstraints(469, 260, 160, 20));
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 12));
         jLabel4.setText("Your Guesses");
@@ -169,7 +171,7 @@ public class GUIPlayer extends javax.swing.JFrame
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel6.setText("Your Last Guess:");
 
-        jLabelLastGuessReds.setFont(new java.awt.Font("Segoe UI", 0, 24));
+        jLabelLastGuessReds.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabelLastGuessReds.setForeground(new java.awt.Color(0, 153, 0));
         jLabelLastGuessReds.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabelLastGuessReds.setText("0");
@@ -178,7 +180,7 @@ public class GUIPlayer extends javax.swing.JFrame
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel8.setText("Reds:");
 
-        jLabelLastGuessWhites.setFont(new java.awt.Font("Segoe UI", 0, 24));
+        jLabelLastGuessWhites.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jLabelLastGuessWhites.setForeground(new java.awt.Color(153, 153, 153));
         jLabelLastGuessWhites.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabelLastGuessWhites.setText("0");
@@ -187,7 +189,7 @@ public class GUIPlayer extends javax.swing.JFrame
         jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel10.setText("Whites:");
 
-        jLabelLastGuess.setFont(new java.awt.Font("Segoe UI", 1, 24));
+        jLabelLastGuess.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabelLastGuess.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
         javax.swing.GroupLayout jPanelResultsLayout = new javax.swing.GroupLayout(jPanelResults);
@@ -246,7 +248,7 @@ public class GUIPlayer extends javax.swing.JFrame
 
         jSpinnerInput3.setFont(new java.awt.Font("Segoe UI", 1, 24));
         jSpinnerInput3.setModel(new javax.swing.SpinnerNumberModel(1, 1, 5, 1));
-        getContentPane().add(jSpinnerInput3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 208, 39, -1));
+        getContentPane().add(jSpinnerInput3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 208, 39, 40));
         jSpinnerInput3.setVisible(false);
 
         jSpinnerInput4.setFont(new java.awt.Font("Segoe UI", 1, 24));
@@ -254,7 +256,7 @@ public class GUIPlayer extends javax.swing.JFrame
         getContentPane().add(jSpinnerInput4, new org.netbeans.lib.awtextra.AbsoluteConstraints(155, 208, 39, 40));
         jSpinnerInput4.setVisible(false);
 
-        jLabelgOverResult.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabelgOverResult.setFont(new java.awt.Font("Segoe UI", 1, 24));
         jLabelgOverResult.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelgOverResult.setText("You Win");
         getContentPane().add(jLabelgOverResult, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 470, 640, 34));
@@ -295,7 +297,7 @@ public class GUIPlayer extends javax.swing.JFrame
         jLabel7.setText("Mastermind was coded by Ryan O'Shea, and is licensed under the GPL. You are free to view the source and make any changes, as long as you give me credit.");
         getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 560, 940, -1));
 
-        jButtonReset.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jButtonReset.setFont(new java.awt.Font("Segoe UI", 1, 12));
         jButtonReset.setText("Play Again");
         jButtonReset.setEnabled(false);
         jButtonReset.addActionListener(new java.awt.event.ActionListener() {
@@ -305,13 +307,23 @@ public class GUIPlayer extends javax.swing.JFrame
         });
         getContentPane().add(jButtonReset, new org.netbeans.lib.awtextra.AbsoluteConstraints(541, 500, -1, -1));
 
+        jLabelRemainingGuesses1.setFont(new java.awt.Font("Segoe UI", 0, 12));
+        jLabelRemainingGuesses1.setText("You have X guesses left");
+        getContentPane().add(jLabelRemainingGuesses1, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 120, 279, 20));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
 	private void jButtonResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonResetActionPerformed
 		
-		setVisible(false);
-		Mastermind.newGame();
+		gs.reset();
+		jLabelgOver.setVisible(false);
+		jLabelgOverResult.setVisible(false);
+		jLabelrecGuesses.setText("");
+		jLabelLastGuess.setText("");
+		jLabelLastGuessReds.setText("0");
+		jLabelLastGuessWhites.setText("0");
+		jLabelRemainingGuesses2.setText((gs.nGuesses - gs.idxGuess) + " guesses left");
 		
 	}//GEN-LAST:event_jButtonResetActionPerformed
 
@@ -368,7 +380,8 @@ public class GUIPlayer extends javax.swing.JFrame
     private javax.swing.JLabel jLabelLastGuessReds;
     private javax.swing.JLabel jLabelLastGuessWhites;
     private javax.swing.JLabel jLabelRange;
-    private javax.swing.JLabel jLabelRemainingGuesses;
+    private javax.swing.JLabel jLabelRemainingGuesses1;
+    private javax.swing.JLabel jLabelRemainingGuesses2;
     private javax.swing.JLabel jLabelTitle;
     private javax.swing.JLabel jLabelgOver;
     private javax.swing.JLabel jLabelgOverResult;
@@ -511,7 +524,8 @@ public class GUIPlayer extends javax.swing.JFrame
             
             this.jLabelnDigits.setText(gs.nDigits + " digits in the number you're trying to guess");
             this.jLabelRange.setText("Each digit ranges from 1-" + gs.range);
-            this.jLabelRemainingGuesses.setText("You have "  + (gs.nGuesses - gs.idxGuess) + " guesses left of " + gs.nGuesses + " total");
+            this.jLabelRemainingGuesses1.setText("You have "  + (gs.nGuesses - gs.idxGuess) + " guesses left of " + gs.nGuesses + " total");
+			this.jLabelRemainingGuesses2.setText((gs.nGuesses - gs.idxGuess) + " guesses left");
 
             this.jLabelrecGuesses.setText("<html>");
 
@@ -530,7 +544,8 @@ public class GUIPlayer extends javax.swing.JFrame
         } else if(gOver == true){
             this.jLabelnDigits.setText(gs.nDigits + " digits in the number you're trying to guess");
             this.jLabelRange.setText("Each digit ranges from 1-" + gs.range);
-            this.jLabelRemainingGuesses.setText("You have "  + (gs.nGuesses - gs.idxGuess) + " guesses left of " + gs.nGuesses + " total");
+            this.jLabelRemainingGuesses1.setText("You have "  + (gs.nGuesses - gs.idxGuess) + " guesses left of " + gs.nGuesses + " total");
+			this.jLabelRemainingGuesses2.setText((gs.nGuesses - gs.idxGuess) + " guesses left");
 
             this.jLabelrecGuesses.setText("<html>");
 

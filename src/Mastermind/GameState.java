@@ -55,7 +55,9 @@ public class GameState {
         recWhite = new int[nGuesses];
 
         actual = new int[nDigits];
-        Random actualGenerator = new Random();
+        generateActual();
+		
+		Random actualGenerator = new Random();
         for(int i = 0; i < nDigits; i++) {
             actual[i] = actualGenerator.nextInt(range) + 1;
         }
@@ -111,4 +113,27 @@ public class GameState {
                 System.out.println("\t\t" + recWhite[i]);
             }
     }
+
+	void reset() {
+		idxGuess = 0;
+		generateActual();
+		for (int i = 0; i < nGuesses; i++) {
+			for (int k = 0; k < nDigits; k++) {
+				recGuesses[i][k] = 0;
+			}
+		}
+		for (int i = 0; i < nGuesses; i++) {
+			recRed[i] = 0;
+		}
+		for (int i = 0; i < nGuesses; i++) {
+			recWhite[i] = 0;
+		}
+	}
+
+	private void generateActual() {
+		Random actualGenerator = new Random();
+        for(int i = 0; i < nDigits; i++) {
+            actual[i] = actualGenerator.nextInt(range) + 1;
+        }
+	}
 }
