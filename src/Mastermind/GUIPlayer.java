@@ -103,20 +103,21 @@ public class GUIPlayer extends javax.swing.JFrame
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        setTitle("Mastermind");
+        setFont(new java.awt.Font("Segoe UI", 0, 12));
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabelTitle.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        jLabelTitle.setFont(new java.awt.Font("Segoe UI", 1, 36));
         jLabelTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelTitle.setText("Mastermind");
         getContentPane().add(jLabelTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 940, 42));
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 13));
         jLabel1.setText("Game Rules");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 64, 95, -1));
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 12));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel2.setText("<html><p><strong>The object of the game is to guess a number, chosen at random.</strong> </p><p>Each guess will be compared to the target number. </p><p>A RED peg means that one of the numbers in your guess exists and is in the correct place in the target number. </p><p>A WHITE peg means that one of the numbers in your guess exists in the target number, but not in the same location as it is in your guess.</p></html>");
         jLabel2.setVerticalAlignment(javax.swing.SwingConstants.TOP);
@@ -124,45 +125,45 @@ public class GUIPlayer extends javax.swing.JFrame
         jLabel2.getAccessibleContext().setAccessibleName("");
         jLabel2.getAccessibleContext().setAccessibleDescription("");
 
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 13));
         jLabel3.setText("Game Status");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 60, 95, 20));
 
         jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
         getContentPane().add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 60, 14, 470));
 
-        jLabelnDigits.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        jLabelnDigits.setFont(new java.awt.Font("Segoe UI", 0, 12));
         jLabelnDigits.setText("BLANK digits in the number you're trying to guess.");
         getContentPane().add(jLabelnDigits, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 80, 279, 20));
 
-        jLabelRange.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        jLabelRange.setFont(new java.awt.Font("Segoe UI", 0, 12));
         jLabelRange.setText("Each digit ranges from 1-X");
         getContentPane().add(jLabelRange, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 100, 279, 20));
 
-        jLabelRemainingGuesses.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        jLabelRemainingGuesses.setFont(new java.awt.Font("Segoe UI", 0, 12));
         jLabelRemainingGuesses.setText("You have X guesses left");
         getContentPane().add(jLabelRemainingGuesses, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 120, 279, 20));
 
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 12));
         jLabel4.setText("Your Guesses");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 150, 279, 20));
 
-        jLabelrecGuesses.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
+        jLabelrecGuesses.setFont(new java.awt.Font("Segoe UI", 0, 12));
         jLabelrecGuesses.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         jLabelrecGuesses.setAutoscrolls(true);
         getContentPane().add(jLabelrecGuesses, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 180, 232, 400));
 
-        jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 13));
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel5.setText("Your Next Guess:");
         getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 179, 210, -1));
 
-        jButtonSubmitInput.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jButtonSubmitInput.setFont(new java.awt.Font("Segoe UI", 0, 18));
         jButtonSubmitInput.setText("Guess");
         jButtonSubmitInput.setEnabled(false);
         getContentPane().add(jButtonSubmitInput, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 210, 163, 38));
 
-        jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 13));
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel6.setText("Your Last Guess:");
 
@@ -180,11 +181,11 @@ public class GUIPlayer extends javax.swing.JFrame
         jLabelLastGuessWhites.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabelLastGuessWhites.setText("0");
 
-        jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
+        jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 13));
         jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel10.setText("Whites:");
 
-        jLabelLastGuess.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabelLastGuess.setFont(new java.awt.Font("Segoe UI", 1, 24));
         jLabelLastGuess.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
 
         javax.swing.GroupLayout jPanelResultsLayout = new javax.swing.GroupLayout(jPanelResults);
@@ -225,24 +226,24 @@ public class GUIPlayer extends javax.swing.JFrame
         getContentPane().add(jPanelResults, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 270, -1, -1));
         jPanelResults.setVisible(false);
 
-        jLabelgOverResult.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabelgOverResult.setFont(new java.awt.Font("Segoe UI", 1, 24));
         jLabelgOverResult.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelgOverResult.setText("You Win");
         getContentPane().add(jLabelgOverResult, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 490, 640, 34));
         jLabelgOverResult.setVisible(false);
 
-        jLabelgOver.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        jLabelgOver.setFont(new java.awt.Font("Segoe UI", 1, 36));
         jLabelgOver.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelgOver.setText("GAME OVER");
         getContentPane().add(jLabelgOver, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 420, 640, 60));
         jLabelgOver.setVisible(false);
 
-        jSpinnerInput1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jSpinnerInput1.setFont(new java.awt.Font("Segoe UI", 1, 24));
         jSpinnerInput1.setModel(new javax.swing.SpinnerNumberModel(1, 1, 5, 1));
         getContentPane().add(jSpinnerInput1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 208, 39, 40));
         jSpinnerInput1.setVisible(false);
 
-        jSpinnerInput2.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jSpinnerInput2.setFont(new java.awt.Font("Segoe UI", 1, 24));
         jSpinnerInput2.setModel(new javax.swing.SpinnerNumberModel(1, 1, 5, 1));
         getContentPane().add(jSpinnerInput2, new org.netbeans.lib.awtextra.AbsoluteConstraints(65, 208, 39, 40));
         jSpinnerInput2.setVisible(false);
@@ -282,12 +283,12 @@ public class GUIPlayer extends javax.swing.JFrame
         getContentPane().add(jSpinnerInput9, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 208, 39, 40));
         jSpinnerInput9.setVisible(false);
 
-        jSpinnerInput10.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jSpinnerInput10.setFont(new java.awt.Font("Segoe UI", 1, 24));
         jSpinnerInput10.setModel(new javax.swing.SpinnerNumberModel(1, 1, 5, 1));
         getContentPane().add(jSpinnerInput10, new org.netbeans.lib.awtextra.AbsoluteConstraints(425, 208, 39, 39));
         jSpinnerInput10.setVisible(false);
 
-        jLabel7.setFont(new java.awt.Font("Consolas", 0, 11)); // NOI18N
+        jLabel7.setFont(new java.awt.Font("Consolas", 0, 11));
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel7.setText("Mastermind was coded by Ryan O'Shea, and is licensed under the GPL. You are free to view the source and make any changes, as long as you give me credit.");
         getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 560, 940, -1));

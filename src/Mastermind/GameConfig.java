@@ -60,6 +60,7 @@ public class GameConfig extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Mastermind: Game Setup");
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -84,12 +85,12 @@ public class GameConfig extends javax.swing.JFrame {
         jLabel3.setText("Number of Digits to Guess:");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(36, 218, -1, -1));
 
-        jLabelTitle.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        jLabelTitle.setFont(new java.awt.Font("Segoe UI", 1, 36));
         jLabelTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelTitle.setText("Mastermind");
         getContentPane().add(jLabelTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 11, 410, 42));
 
-        jButtonSubmitConfig.setFont(new java.awt.Font("Segoe UI", 1, 22)); // NOI18N
+        jButtonSubmitConfig.setFont(new java.awt.Font("Segoe UI", 1, 22));
         jButtonSubmitConfig.setText("Start Game");
         jButtonSubmitConfig.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -108,7 +109,7 @@ public class GameConfig extends javax.swing.JFrame {
         jLabel1.setText("Game Rules");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 71, 95, -1));
 
-        jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 11));
         jLabel6.setText("by Ryan O'Shea");
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 410, -1, -1));
 
