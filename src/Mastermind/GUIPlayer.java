@@ -324,6 +324,8 @@ public class GUIPlayer extends javax.swing.JFrame
 		jLabelLastGuessReds.setText("0");
 		jLabelLastGuessWhites.setText("0");
 		jLabelRemainingGuesses2.setText((gs.nGuesses - gs.idxGuess) + " guesses left");
+		input = "";
+		jButtonReset.setEnabled(false);
 		
 	}//GEN-LAST:event_jButtonResetActionPerformed
 
@@ -487,36 +489,38 @@ public class GUIPlayer extends javax.swing.JFrame
     }
     
     public void actionPerformed(ActionEvent e) {
-        if (gs.nDigits >= 1) {
-            input = this.jSpinnerInput1.getValue().toString();
-        }
-        if (gs.nDigits >= 2) {
-            input = input + this.jSpinnerInput2.getValue().toString();
-        }
-        if (gs.nDigits >= 3) {
-            input = input + this.jSpinnerInput3.getValue().toString();
-        }
-        if (gs.nDigits >= 4) {
-            input = input + this.jSpinnerInput4.getValue().toString();
-        }
-        if (gs.nDigits >= 5) {
-            input = input + this.jSpinnerInput5.getValue().toString();
-        }
-        if (gs.nDigits >= 6) {
-            input = input + this.jSpinnerInput6.getValue().toString();
-        }
-        if (gs.nDigits >= 7) {
-            input = input + this.jSpinnerInput7.getValue().toString();
-        }
-        if (gs.nDigits >= 8) {
-            input = input + this.jSpinnerInput8.getValue().toString();
-        }
-        if (gs.nDigits >= 9) {
-            input = input + this.jSpinnerInput9.getValue().toString();
-        }
-        if (gs.nDigits >= 10) {
-            input = input + this.jSpinnerInput10.getValue().toString();
-        }
+        if(gs.idxGuess != gs.nGuesses) {
+			if (gs.nDigits >= 1) {
+				input = this.jSpinnerInput1.getValue().toString();
+			}
+			if (gs.nDigits >= 2) {
+				input = input + this.jSpinnerInput2.getValue().toString();
+			}
+			if (gs.nDigits >= 3) {
+				input = input + this.jSpinnerInput3.getValue().toString();
+			}
+			if (gs.nDigits >= 4) {
+				input = input + this.jSpinnerInput4.getValue().toString();
+			}
+			if (gs.nDigits >= 5) {
+				input = input + this.jSpinnerInput5.getValue().toString();
+			}
+			if (gs.nDigits >= 6) {
+				input = input + this.jSpinnerInput6.getValue().toString();
+			}
+			if (gs.nDigits >= 7) {
+				input = input + this.jSpinnerInput7.getValue().toString();
+			}
+			if (gs.nDigits >= 8) {
+				input = input + this.jSpinnerInput8.getValue().toString();
+			}
+			if (gs.nDigits >= 9) {
+				input = input + this.jSpinnerInput9.getValue().toString();
+			}
+			if (gs.nDigits >= 10) {
+				input = input + this.jSpinnerInput10.getValue().toString();
+			}
+		}
     }
     
     public void dumpGameState(boolean gOver, boolean victory) {
