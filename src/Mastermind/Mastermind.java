@@ -24,22 +24,35 @@ package Mastermind;
 public class Mastermind {
     
     //LOADER Class
+    
+    static int nDigits, range, nGuesses;
 
     public static void main(String[] args){
-        
-        String playerType = args[3];
-        
-        if ("terminal".equals(playerType)){
-            TerminalPlayer player = new TerminalPlayer();
-            Game game = new Game(player, Integer.parseInt(args[0]), Integer.parseInt(args[1]), Integer.parseInt(args[2]));
-            game.play();
-            
-        } else if ("GUI".equals(playerType)) {
-            GUIPlayer player = new GUIPlayer();
-            player.setVisible(true);
-            Game game = new Game(player, Integer.parseInt(args[0]), Integer.parseInt(args[1]), Integer.parseInt(args[2]));
-            game.play();
-        } 
+
+	GameConfig config = new GameConfig();
+	config.setVisible(true);
+	while (config.nGuesses == 0) {}
+	nDigits = config.getNDigits();
+	range = config.getRange();
+	nGuesses = config.getNGuesses();
+	GUIPlayer player = new GUIPlayer();
+	config.setVisible(false);
+	player.setVisible(true);
+	Game game = new Game(player, nDigits, range, nGuesses);
+	game.play();
+//        String playerType = args[3];
+//        
+//        if ("terminal".equals(playerType)){
+//            TerminalPlayer player = new TerminalPlayer();
+//            Game game = new Game(player, Integer.parseInt(args[0]), Integer.parseInt(args[1]), Integer.parseInt(args[2]));
+//            game.play();
+//            
+//        } else if ("GUI".equals(playerType)) {
+//            GUIPlayer player = new GUIPlayer();
+//            player.setVisible(true);
+//            Game game = new Game(player, Integer.parseInt(args[0]), Integer.parseInt(args[1]), Integer.parseInt(args[2]));
+//            game.play();
+//        } 
         
     }
 }
