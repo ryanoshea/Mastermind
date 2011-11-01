@@ -23,6 +23,7 @@ package Mastermind;
  */
 
 import java.util.Random;
+
 public class GameState {
     int nDigits;        //length of sequence
     int range;          //range (1-4, 1-5, 1-6) of numbers to guess from

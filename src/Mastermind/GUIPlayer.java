@@ -2,6 +2,7 @@ package Mastermind;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Random;
 import javax.swing.SpinnerModel;
 import javax.swing.SpinnerNumberModel;
 
@@ -66,12 +67,12 @@ public class GUIPlayer extends javax.swing.JFrame
         jLabelLastGuessWhites = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabelLastGuess = new javax.swing.JLabel();
-        jLabelgOverResult = new javax.swing.JLabel();
         jLabelgOver = new javax.swing.JLabel();
         jSpinnerInput1 = new javax.swing.JSpinner();
         jSpinnerInput2 = new javax.swing.JSpinner();
         jSpinnerInput3 = new javax.swing.JSpinner();
         jSpinnerInput4 = new javax.swing.JSpinner();
+        jLabelgOverResult = new javax.swing.JLabel();
         jSpinnerInput5 = new javax.swing.JSpinner();
         jSpinnerInput6 = new javax.swing.JSpinner();
         jSpinnerInput7 = new javax.swing.JSpinner();
@@ -79,6 +80,7 @@ public class GUIPlayer extends javax.swing.JFrame
         jSpinnerInput9 = new javax.swing.JSpinner();
         jSpinnerInput10 = new javax.swing.JSpinner();
         jLabel7 = new javax.swing.JLabel();
+        jButtonReset = new javax.swing.JButton();
 
         javax.swing.GroupLayout jFrame1Layout = new javax.swing.GroupLayout(jFrame1.getContentPane());
         jFrame1.getContentPane().setLayout(jFrame1Layout);
@@ -148,10 +150,10 @@ public class GUIPlayer extends javax.swing.JFrame
         jLabel4.setText("Your Guesses");
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 150, 279, 20));
 
-        jLabelrecGuesses.setFont(new java.awt.Font("Segoe UI", 0, 12));
+        jLabelrecGuesses.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jLabelrecGuesses.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         jLabelrecGuesses.setAutoscrolls(true);
-        getContentPane().add(jLabelrecGuesses, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 180, 232, 400));
+        getContentPane().add(jLabelrecGuesses, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 180, 232, 370));
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 13));
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -226,13 +228,7 @@ public class GUIPlayer extends javax.swing.JFrame
         getContentPane().add(jPanelResults, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 270, -1, -1));
         jPanelResults.setVisible(false);
 
-        jLabelgOverResult.setFont(new java.awt.Font("Segoe UI", 1, 24));
-        jLabelgOverResult.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabelgOverResult.setText("You Win");
-        getContentPane().add(jLabelgOverResult, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 490, 640, 34));
-        jLabelgOverResult.setVisible(false);
-
-        jLabelgOver.setFont(new java.awt.Font("Segoe UI", 1, 36));
+        jLabelgOver.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabelgOver.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelgOver.setText("GAME OVER");
         getContentPane().add(jLabelgOver, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 420, 640, 60));
@@ -257,6 +253,12 @@ public class GUIPlayer extends javax.swing.JFrame
         jSpinnerInput4.setModel(new javax.swing.SpinnerNumberModel(1, 1, 5, 1));
         getContentPane().add(jSpinnerInput4, new org.netbeans.lib.awtextra.AbsoluteConstraints(155, 208, 39, 40));
         jSpinnerInput4.setVisible(false);
+
+        jLabelgOverResult.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabelgOverResult.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabelgOverResult.setText("You Win");
+        getContentPane().add(jLabelgOverResult, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 470, 640, 34));
+        jLabelgOverResult.setVisible(false);
 
         jSpinnerInput5.setFont(new java.awt.Font("Segoe UI", 1, 24));
         jSpinnerInput5.setModel(new javax.swing.SpinnerNumberModel(1, 1, 5, 1));
@@ -293,8 +295,25 @@ public class GUIPlayer extends javax.swing.JFrame
         jLabel7.setText("Mastermind was coded by Ryan O'Shea, and is licensed under the GPL. You are free to view the source and make any changes, as long as you give me credit.");
         getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 560, 940, -1));
 
+        jButtonReset.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jButtonReset.setText("Play Again");
+        jButtonReset.setEnabled(false);
+        jButtonReset.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonResetActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButtonReset, new org.netbeans.lib.awtextra.AbsoluteConstraints(541, 500, -1, -1));
+
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+	private void jButtonResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonResetActionPerformed
+		
+		setVisible(false);
+		Mastermind.newGame();
+		
+	}//GEN-LAST:event_jButtonResetActionPerformed
 
     /**
      * @param args the command line arguments
@@ -332,6 +351,7 @@ public class GUIPlayer extends javax.swing.JFrame
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButtonReset;
     private javax.swing.JButton jButtonSubmitInput;
     private javax.swing.JFrame jFrame1;
     private javax.swing.JFrame jFrame2;
@@ -535,6 +555,8 @@ public class GUIPlayer extends javax.swing.JFrame
 			if (victory == true) {
                 this.jLabelgOverResult.setText("You Win!");
             }
+			
+			jButtonReset.setEnabled(true);
         }
     }
     

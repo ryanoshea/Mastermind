@@ -29,17 +29,7 @@ public class Mastermind {
 
     public static void main(String[] args){
 
-	GameConfig config = new GameConfig();
-	config.setVisible(true);
-	while (config.nGuesses == 0) {}
-	nDigits = config.getNDigits();
-	range = config.getRange();
-	nGuesses = config.getNGuesses();
-	GUIPlayer player = new GUIPlayer();
-	config.setVisible(false);
-	player.setVisible(true);
-	Game game = new Game(player, nDigits, range, nGuesses);
-	game.play();
+		newGame();
 	
 //	String playerType = args[3];
 //
@@ -56,4 +46,18 @@ public class Mastermind {
 //	} 
         
     }
+
+	static void newGame() {
+		GameConfig config = new GameConfig();
+		config.setVisible(true);
+		while (config.nGuesses == 0) {}
+		nDigits = config.getNDigits();
+		range = config.getRange();
+		nGuesses = config.getNGuesses();
+		GUIPlayer player = new GUIPlayer();
+		config.setVisible(false);
+		player.setVisible(true);
+		Game game = new Game(player, nDigits, range, nGuesses);
+		game.play();
+	}
 }
