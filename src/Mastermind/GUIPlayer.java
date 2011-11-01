@@ -104,49 +104,64 @@ public class GUIPlayer extends javax.swing.JFrame
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         setResizable(false);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabelTitle.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabelTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelTitle.setText("Mastermind");
+        getContentPane().add(jLabelTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 20, 940, 42));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
         jLabel1.setText("Game Rules");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 64, 95, -1));
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 12));
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel2.setText("<html><p><strong>The object of the game is to guess a number, chosen at random.</strong> </p><p>Each guess will be compared to the target number. </p><p>A RED peg means that one of the numbers in your guess exists and is in the correct place in the target number. </p><p>A WHITE peg means that one of the numbers in your guess exists in the target number, but not in the same location as it is in your guess.</p></html>");
         jLabel2.setVerticalAlignment(javax.swing.SwingConstants.TOP);
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 88, 444, 78));
+        jLabel2.getAccessibleContext().setAccessibleName("");
+        jLabel2.getAccessibleContext().setAccessibleDescription("");
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
         jLabel3.setText("Game Status");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 60, 95, 20));
 
         jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
+        getContentPane().add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 60, 14, 470));
 
-        jLabelnDigits.setFont(new java.awt.Font("Segoe UI", 0, 12));
+        jLabelnDigits.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jLabelnDigits.setText("BLANK digits in the number you're trying to guess.");
+        getContentPane().add(jLabelnDigits, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 80, 279, 20));
 
         jLabelRange.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jLabelRange.setText("Each digit ranges from 1-X");
+        getContentPane().add(jLabelRange, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 100, 279, 20));
 
-        jLabelRemainingGuesses.setFont(new java.awt.Font("Segoe UI", 0, 12));
+        jLabelRemainingGuesses.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jLabelRemainingGuesses.setText("You have X guesses left");
+        getContentPane().add(jLabelRemainingGuesses, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 120, 279, 20));
 
-        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 12));
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jLabel4.setText("Your Guesses");
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 150, 279, 20));
 
         jLabelrecGuesses.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jLabelrecGuesses.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         jLabelrecGuesses.setAutoscrolls(true);
+        getContentPane().add(jLabelrecGuesses, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 180, 232, 400));
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel5.setText("Your Next Guess:");
+        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 179, 210, -1));
 
         jButtonSubmitInput.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jButtonSubmitInput.setText("Guess");
         jButtonSubmitInput.setEnabled(false);
+        getContentPane().add(jButtonSubmitInput, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 210, 163, 38));
 
-        jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 13));
+        jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel6.setText("Your Last Guess:");
 
@@ -164,7 +179,7 @@ public class GUIPlayer extends javax.swing.JFrame
         jLabelLastGuessWhites.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabelLastGuessWhites.setText("0");
 
-        jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 13));
+        jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
         jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel10.setText("Whites:");
 
@@ -206,171 +221,69 @@ public class GUIPlayer extends javax.swing.JFrame
                 .addContainerGap())
         );
 
-        jLabelgOverResult.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        jLabelgOverResult.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabelgOverResult.setText("You Win!");
+        getContentPane().add(jPanelResults, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 270, -1, -1));
+        jPanelResults.setVisible(false);
 
-        jLabelgOver.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabelgOverResult.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabelgOverResult.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabelgOverResult.setText("You Win");
+        getContentPane().add(jLabelgOverResult, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 490, 640, 34));
+        jLabelgOverResult.setVisible(false);
+
+        jLabelgOver.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabelgOver.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabelgOver.setText("GAME OVER");
+        getContentPane().add(jLabelgOver, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 420, 640, 60));
+        jLabelgOver.setVisible(false);
 
         jSpinnerInput1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jSpinnerInput1.setModel(new javax.swing.SpinnerNumberModel(1, 1, 5, 1));
+        getContentPane().add(jSpinnerInput1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 208, 39, 40));
+        jSpinnerInput1.setVisible(false);
 
         jSpinnerInput2.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jSpinnerInput2.setModel(new javax.swing.SpinnerNumberModel(1, 1, 5, 1));
+        getContentPane().add(jSpinnerInput2, new org.netbeans.lib.awtextra.AbsoluteConstraints(65, 208, 39, 40));
+        jSpinnerInput2.setVisible(false);
 
-        jSpinnerInput3.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jSpinnerInput3.setFont(new java.awt.Font("Segoe UI", 1, 24));
         jSpinnerInput3.setModel(new javax.swing.SpinnerNumberModel(1, 1, 5, 1));
+        getContentPane().add(jSpinnerInput3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 208, 39, -1));
+        jSpinnerInput3.setVisible(false);
 
-        jSpinnerInput4.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jSpinnerInput4.setFont(new java.awt.Font("Segoe UI", 1, 24));
         jSpinnerInput4.setModel(new javax.swing.SpinnerNumberModel(1, 1, 5, 1));
+        getContentPane().add(jSpinnerInput4, new org.netbeans.lib.awtextra.AbsoluteConstraints(155, 208, 39, 40));
+        jSpinnerInput4.setVisible(false);
 
-        jSpinnerInput5.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jSpinnerInput5.setFont(new java.awt.Font("Segoe UI", 1, 24));
         jSpinnerInput5.setModel(new javax.swing.SpinnerNumberModel(1, 1, 5, 1));
+        getContentPane().add(jSpinnerInput5, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 208, 39, 40));
+        jSpinnerInput5.setVisible(false);
 
-        jSpinnerInput6.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jSpinnerInput6.setFont(new java.awt.Font("Segoe UI", 1, 24));
         jSpinnerInput6.setModel(new javax.swing.SpinnerNumberModel(1, 1, 5, 1));
+        getContentPane().add(jSpinnerInput6, new org.netbeans.lib.awtextra.AbsoluteConstraints(245, 208, 39, 40));
+        jSpinnerInput6.setVisible(false);
 
-        jSpinnerInput7.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jSpinnerInput7.setFont(new java.awt.Font("Segoe UI", 1, 24));
         jSpinnerInput7.setModel(new javax.swing.SpinnerNumberModel(1, 1, 5, 1));
+        getContentPane().add(jSpinnerInput7, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 208, 39, 40));
+        jSpinnerInput7.setVisible(false);
 
-        jSpinnerInput8.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jSpinnerInput8.setFont(new java.awt.Font("Segoe UI", 1, 24));
         jSpinnerInput8.setModel(new javax.swing.SpinnerNumberModel(1, 1, 5, 1));
+        getContentPane().add(jSpinnerInput8, new org.netbeans.lib.awtextra.AbsoluteConstraints(335, 208, 39, 40));
+        jSpinnerInput8.setVisible(false);
 
-        jSpinnerInput9.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jSpinnerInput9.setFont(new java.awt.Font("Segoe UI", 1, 24));
         jSpinnerInput9.setModel(new javax.swing.SpinnerNumberModel(1, 1, 5, 1));
+        getContentPane().add(jSpinnerInput9, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 208, 39, 40));
+        jSpinnerInput9.setVisible(false);
 
         jSpinnerInput10.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jSpinnerInput10.setModel(new javax.swing.SpinnerNumberModel(1, 1, 5, 1));
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabelTitle, javax.swing.GroupLayout.DEFAULT_SIZE, 1155, Short.MAX_VALUE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(10, 10, 10)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jSpinnerInput1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jSpinnerInput2, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(6, 6, 6)
-                                        .addComponent(jSpinnerInput3, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jSpinnerInput4, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jSpinnerInput5, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jSpinnerInput6, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jPanelResults, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addComponent(jSpinnerInput7, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(jSpinnerInput8, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(jSpinnerInput9, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                .addComponent(jSpinnerInput10, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                .addComponent(jButtonSubmitInput, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE))))))
-                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jLabelgOverResult, javax.swing.GroupLayout.PREFERRED_SIZE, 757, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabelgOver, javax.swing.GroupLayout.PREFERRED_SIZE, 757, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(62, 62, 62)
-                        .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabelRange, javax.swing.GroupLayout.PREFERRED_SIZE, 279, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabelRemainingGuesses, javax.swing.GroupLayout.PREFERRED_SIZE, 279, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGroup(layout.createSequentialGroup()
-                                            .addGap(10, 10, 10)
-                                            .addComponent(jLabelnDigits, javax.swing.GroupLayout.PREFERRED_SIZE, 279, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 279, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(40, 40, 40)
-                                .addComponent(jLabelrecGuesses, javax.swing.GroupLayout.PREFERRED_SIZE, 232, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addContainerGap(29, Short.MAX_VALUE))))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabelTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabelnDigits)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabelRange)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabelRemainingGuesses)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel4)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabelrecGuesses, javax.swing.GroupLayout.PREFERRED_SIZE, 303, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(13, 13, 13)
-                        .addComponent(jLabel5)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButtonSubmitInput)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(jSpinnerInput1, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jSpinnerInput2, javax.swing.GroupLayout.DEFAULT_SIZE, 39, Short.MAX_VALUE)
-                                .addComponent(jSpinnerInput4, javax.swing.GroupLayout.DEFAULT_SIZE, 39, Short.MAX_VALUE)
-                                .addComponent(jSpinnerInput5, javax.swing.GroupLayout.DEFAULT_SIZE, 39, Short.MAX_VALUE)
-                                .addComponent(jSpinnerInput6, javax.swing.GroupLayout.DEFAULT_SIZE, 39, Short.MAX_VALUE)
-                                .addComponent(jSpinnerInput7, javax.swing.GroupLayout.DEFAULT_SIZE, 39, Short.MAX_VALUE)
-                                .addComponent(jSpinnerInput8, javax.swing.GroupLayout.DEFAULT_SIZE, 39, Short.MAX_VALUE)
-                                .addComponent(jSpinnerInput9, javax.swing.GroupLayout.DEFAULT_SIZE, 39, Short.MAX_VALUE)
-                                .addComponent(jSpinnerInput10, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 39, Short.MAX_VALUE)
-                                .addComponent(jSpinnerInput3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(35, 35, 35)
-                        .addComponent(jPanelResults, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabelgOver, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabelgOverResult, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jSeparator1))
-                .addContainerGap(21, Short.MAX_VALUE))
-        );
-
-        jLabel2.getAccessibleContext().setAccessibleName("");
-        jLabel2.getAccessibleContext().setAccessibleDescription("");
-        jPanelResults.setVisible(false);
-        jLabelgOverResult.setVisible(false);
-        jLabelgOver.setVisible(false);
-        jSpinnerInput1.setVisible(false);
-        jSpinnerInput2.setVisible(false);
-        jSpinnerInput3.setVisible(false);
-        jSpinnerInput4.setVisible(false);
-        jSpinnerInput5.setVisible(false);
-        jSpinnerInput6.setVisible(false);
-        jSpinnerInput7.setVisible(false);
-        jSpinnerInput8.setVisible(false);
-        jSpinnerInput9.setVisible(false);
+        getContentPane().add(jSpinnerInput10, new org.netbeans.lib.awtextra.AbsoluteConstraints(425, 208, 39, 39));
         jSpinnerInput10.setVisible(false);
 
         pack();
@@ -624,7 +537,7 @@ public class GUIPlayer extends javax.swing.JFrame
                 this.jLabelgOverResult.setText("You Win!");
             }
             if (gs.idxGuess >= gs.nGuesses) {
-                this.jLabelgOverResult.setText("You lose :(");
+                this.jLabelgOverResult.setText("You lose.");
             }
         }
     }
